@@ -34,6 +34,9 @@ public class Main {
                 case ADD_NEW_VET:
                     vetController.create();
                     break;
+                case SHOW_ALL:
+                    vetController.showAllVets();
+                    break;
                 case UNKNOWN:
                     break;
                 case EXIT:
@@ -46,6 +49,8 @@ public class Main {
             }
 
         } while (!option.equals(UserOption.EXIT));
+
+
 
         SessionManager.shutdown();
 
