@@ -1,5 +1,7 @@
 package com.sda.ioana.petclinic.repository.base;
 
+import com.sda.ioana.petclinic.service.dto.VetDto;
+
 import java.util.List;
 import java.util.Optional;
 

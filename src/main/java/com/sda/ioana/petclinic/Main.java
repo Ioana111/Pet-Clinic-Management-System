@@ -40,6 +40,9 @@ public class Main {
                 case DELETE_BY_ID:
                     vetController.deleteById();
                     break;
+                case UPDATE_BY_ID:
+                    vetController.updateById();
+                    break;
                 case UNKNOWN:
                     break;
                 case EXIT:
