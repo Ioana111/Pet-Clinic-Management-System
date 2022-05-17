@@ -37,6 +37,9 @@ public class Main {
                 case SHOW_ALL:
                     vetController.showAllVets();
                     break;
+                case DELETE_BY_ID:
+                    vetController.deleteById();
+                    break;
                 case UNKNOWN:
                     break;
                 case EXIT:

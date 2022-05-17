@@ -15,4 +15,6 @@ public interface VetService {
     //DTO = data tranfer obj
     List<VetDto> findAll();
 
+    void deleteById(Long id);
+
 }

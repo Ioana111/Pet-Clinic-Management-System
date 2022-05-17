@@ -55,5 +55,10 @@ public class VetServiceImpl implements VetService {
                 ).collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteById(Long id) {
+        vetRepository.deleteById(id);
+    }
+
 
 }
