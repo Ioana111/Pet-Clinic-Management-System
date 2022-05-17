@@ -2,8 +2,10 @@ package com.sda.ioana.petclinic.controller;
 
 import com.sda.ioana.petclinic.service.VetService;
 import com.sda.ioana.petclinic.service.VetServiceImpl;
+import com.sda.ioana.petclinic.service.dto.VetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class VetController {
@@ -31,10 +33,25 @@ public class VetController {
             System.out.println("Vet " + firstName + " " + lastName + " was successfully created.");
         } catch (InvalidParameterException e) {
             System.out.println(e.getMessage());
-        } catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println("Vet was not created; Internal server error");
         }
+
     }
 
+    public void showAllVets() {
+        List<VetDto> vets = vetService.findAll();
+        if (vets.isEmpty()) {
+            System.out.println("No vets");
+            return;
+        }
+        vets.stream()
+                .forEach(vetDto ->
+                        System.out.println("\n ID: " + vetDto.getId()
+                                + "\n Name: " + vetDto.getFirstName() + " " + vetDto.getLastName()
+                                + "\n Address: " + vetDto.getAddress()
+                                + "\n Speciality: " + vetDto.getSpeciality())
+                );
+    }
 
 }
