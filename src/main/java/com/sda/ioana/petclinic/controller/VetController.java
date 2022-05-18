@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class VetController {
 
     private final VetService vetService;
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public VetController() {
         this.vetService = new VetServiceImpl();
@@ -91,5 +91,7 @@ public class VetController {
             System.out.println("The veterinarian was not updated, internal server error.");
         }
     }
+
+
 
 }
