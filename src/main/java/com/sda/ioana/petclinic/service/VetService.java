@@ -17,4 +17,10 @@ public interface VetService {
 
     void deleteById(Long id);
 
+    void updateById(Long id,
+                    String firstName,
+                    String lastName,
+                    String address,
+                    String speciality) throws InvalidParameterException;;
+
 }

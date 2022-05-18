@@ -1,5 +1,6 @@
 package com.sda.ioana.petclinic.repository.base;
 
+import com.sda.ioana.petclinic.service.dto.VetDto;
 import com.sda.ioana.petclinic.utils.SessionManager;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

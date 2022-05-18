@@ -7,6 +7,7 @@ public enum UserOption {
     ADD_NEW_VET("Add new vet", 1),
     SHOW_ALL("Display all vets", 2),
     DELETE_BY_ID("Delete vet by id", 3),
+    UPDATE_BY_ID("Update vet by id", 4),
     EXIT("Exit", 999),
     UNKNOWN("Unknown option. Try again!", 1000);
 
