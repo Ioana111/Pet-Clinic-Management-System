@@ -1,5 +1,6 @@
 package com.sda.ioana.petclinic;
 
+import com.sda.ioana.petclinic.controller.PetController;
 import com.sda.ioana.petclinic.controller.VetController;
 import com.sda.ioana.petclinic.option.UserOption;
 import com.sda.ioana.petclinic.utils.SessionManager;
@@ -14,7 +15,7 @@ public class Main {
 
         VetController vetController = new VetController();
 //        vetController.create();
-
+        PetController petController = new PetController();
 
         UserOption option = UserOption.UNKNOWN;
         Scanner scanner = new Scanner(System.in);
@@ -42,6 +43,9 @@ public class Main {
                     break;
                 case UPDATE_BY_ID:
                     vetController.updateById();
+                    break;
+                case ADD_NEW_PET:
+                    petController.create();
                     break;
                 case UNKNOWN:
                     break;

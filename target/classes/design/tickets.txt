@@ -11,14 +11,17 @@ PCMS-4
 As a user, I should be able to update an existing vet by id. I should be able to update: firstname, lastname, adress, speciality.
 
 PCMS-5
-As a user, I should be able to add a new pet. I should be able to specify: race, birthdate, isVaccinated, ownerName.
+As a user, I should be able to add a new pet. I should be able to specify: race, birthdate, isVaccinated, ownerName - OWNER FIRST NAME and OWNER LAST NAME
 
+/HW TODO
 PCMS-6
 As a user, I should be able to view all the pets. I should be able to see for each pet: id, race, birthdate, isVaccinated, ownerName.
 
+/HW TODO
 PCMS-7
 As a user, I should be able to delete an existing pet by id.
 
+/HW TODO
 PCMS-8
 As a user, I should be able to update an existing pet by id. I should be able to update: race, birthdate, isVaccinated, ownerName.
 
