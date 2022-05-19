@@ -58,4 +58,10 @@ public class PetController {
 
     }
 
+    public void showAllVaccinated(){
+        petService.findAllVaccinated()
+                .stream()
+                .forEach(pet -> System.out.println("Race: " + pet.getRace() + " Date of birth: " + FORMATTER.format(pet.getDateOfBirth()) + " Is vaccinated : " + (pet.getVaccinated()?"YES":"NO")));
+    }
+
 }

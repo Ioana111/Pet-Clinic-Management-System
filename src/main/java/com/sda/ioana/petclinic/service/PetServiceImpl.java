@@ -9,6 +9,7 @@ import com.sda.ioana.petclinic.repository.PetRepositoryImpl;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 public class PetServiceImpl implements PetService{
@@ -51,5 +52,10 @@ public class PetServiceImpl implements PetService{
         pet.setOwner(clientFromDB.get());
         petRepository.create(pet);
 
+    }
+
+    @Override
+    public List<Pet> findAllVaccinated() {
+        return  petRepository.findAllVaccinated();
     }
 }

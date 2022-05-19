@@ -4,7 +4,6 @@ import com.sda.ioana.petclinic.controller.PetController;
 import com.sda.ioana.petclinic.controller.VetController;
 import com.sda.ioana.petclinic.option.UserOption;
 import com.sda.ioana.petclinic.utils.SessionManager;
-import org.hibernate.Session;
 
 import java.util.Scanner;
 
@@ -46,6 +45,9 @@ public class Main {
                     break;
                 case ADD_NEW_PET:
                     petController.create();
+                    break;
+                case SHOW_ALL_VACCINATED_PETS:
+                    petController.showAllVaccinated();
                     break;
                 case UNKNOWN:
                     break;
