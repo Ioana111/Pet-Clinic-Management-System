@@ -80,5 +80,40 @@ public class PetServiceImpl implements PetService{
         petRepository.deleteById(id);
     }
 
+    @Override
+    public void updatePetById(Long id, String race, Date dateOfBirth, boolean isVaccinated) throws InvalidParameterException {
+        if (race == null || race.isBlank()) {
+            throw new InvalidParameterException("Race is null or empty.");
+        }
+//        if (ownerFirstName == null || ownerFirstName.isBlank()) {
+//            throw new InvalidParameterException("Owner first name is null or empty.");
+//        }
+//        if (ownerLastName == null || ownerLastName.isBlank()) {
+//            throw new InvalidParameterException("Owner last name is null or empty.");
+//        }
+        if (dateOfBirth == null) {
+            throw new InvalidParameterException("Date of birth is null.");
+        }
+        if (dateOfBirth.after(new Date())) {
+            throw new InvalidParameterException("Date of birth is in the future.");
+        }
+        Optional<Pet> pet = petRepository.findById(id);
 
-}
+        if(pet.isPresent()){
+            pet.get().setRace(race);
+            pet.get().setDateOfBirth(dateOfBirth);
+            pet.get().setVaccinated(isVaccinated);
+
+            petRepository.update(pet.get());
+        }
+
+
+
+
+
+        }
+
+    }
+
+
+

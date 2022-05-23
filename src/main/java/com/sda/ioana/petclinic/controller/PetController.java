@@ -83,15 +83,52 @@ public class PetController {
                 );
     }
 
-    public void deleteById(){
+    public void deleteById() {
         try {
             System.out.println("Please insert the pet id: ");
             String idString = scanner.nextLine();
             Long id = Long.parseLong(idString);
             petService.deletePetById(id);
             System.out.println("Pet was successfully deleted!");
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Invalid parameter");
+        }
+    }
+
+
+    public void updateById() {
+        try {
+            System.out.println("Please insert id:");
+            String idString = scanner.nextLine();
+            long id = Long.parseLong(idString);
+
+            System.out.println("Please insert dog race: ");
+            String race = scanner.nextLine();
+
+            System.out.println("Please insert date of birth: ");
+            String dateOfBirth = scanner.nextLine();
+            Date birthDate = FORMATTER.parse(dateOfBirth);
+
+            System.out.println("Please insert true if dog is vaccinated or false otherwise ");
+            boolean isVaccinated = sc.nextBoolean();
+
+//            System.out.println("Please insert owner's first name: ");
+//            String ownerFirstName = scanner.nextLine();
+//
+//            System.out.println("Please insert owner's last name: ");
+//            String ownerLastName = scanner.nextLine();
+
+            petService.updatePetById(id, race, birthDate, isVaccinated);
+            System.out.println("Pet " + race + " was successfully created.");
+
+        } catch (InvalidParameterException e) {
+            System.out.println(e.getMessage());
+        } catch (ParseException parseException) {
+            System.out.println("Please insert a correct date of birth. Format: DD-MM-YYYY");
+        } catch (InputMismatchException mismatchException) {
+            System.out.println("Please insert true or false for the vaccinated status .");
+        } catch (Exception ex) {
+            System.out.println("Pet was not created; Internal server error");
         }
     }
 }
