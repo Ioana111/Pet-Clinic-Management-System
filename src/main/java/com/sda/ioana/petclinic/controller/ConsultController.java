@@ -55,4 +55,11 @@ public class ConsultController {
 
     }
 
+    public void viewAllUnvaccinatedPets(){
+        System.out.println("Consults that have  unvaccinated pets are: ");
+       consultService.findAllUnvaccinatedPets()
+               .stream()
+               .forEach(consult -> System.out.println("Date: " + consult.getDate() + "\nDescription: " + consult.getDescription() + "\nVet:" + consult.getVet() + "\nPet:" + consult.getPet()));
+    }
+
 }

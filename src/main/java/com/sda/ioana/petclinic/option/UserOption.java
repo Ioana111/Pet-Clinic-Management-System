@@ -15,6 +15,7 @@ public enum UserOption {
     DELETE_PET_BY_ID("Delete pet by id", 9),
     UPDATE_PET_BY_ID("Update pet by id", 10),
     ADD_NEW_CONSULT("Add new consult", 11),
+    SHOW_ALL_CONSULTS_WITH_UNVACCINATED_PETS("Show all consults with unvaccinated pets", 12),
     EXIT("Exit", 999),
     UNKNOWN("Unknown option. Try again!", 1000);
 

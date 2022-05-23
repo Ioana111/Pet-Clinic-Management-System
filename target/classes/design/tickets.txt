@@ -20,7 +20,7 @@ Partially done TODO: PCMS-8 As a User I should be able to update an existing pet
 PCMS-9 As a User, I should be able to add a new consult. I should be able
 to specify vet, pet, date, description
 
-TODO: PCMS-10 As a User, I should be able to view all the consults. I should be able to see each consult: id, vet_id, pet_id, date, description.
+Done: PCMS-10 As a User, I should be able to view all the consults. I should be able to see each consult: id, vet_id, pet_id, date, description.
 
 TODO: PCMS-11 As a User, I should be able to update the description of a consult.
 

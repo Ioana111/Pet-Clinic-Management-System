@@ -8,6 +8,7 @@ import com.sda.ioana.petclinic.repository.*;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 public class ConsultServiceImpl implements ConsultService {
@@ -54,6 +55,11 @@ public class ConsultServiceImpl implements ConsultService {
         consult.setPet(petFromDB.get());
         consult.setVet(vetFromDB.get());
         consultRepository.create(consult);
+    }
+
+    @Override
+    public List<Consult> findAllUnvaccinatedPets() {
+        return consultRepository.findAllUnvaccinatedPets();
     }
 
 
