@@ -12,6 +12,7 @@ public enum UserOption {
     SHOW_ALL_VACCINATED_PETS("Show all vaccinated pets", 6),
     SHOW_ALL_PETS_BY_CLINT_ID("Show all pets using client id", 7),
     SHOW_ALL_PETS("Display all pets", 8),
+    DELETE_PET_BY_ID("Delete pet by id", 9),
     EXIT("Exit", 999),
     UNKNOWN("Unknown option. Try again!", 1000);
 

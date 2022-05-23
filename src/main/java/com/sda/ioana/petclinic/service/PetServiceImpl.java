@@ -75,5 +75,10 @@ public class PetServiceImpl implements PetService{
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deletePetById(Long id) {
+        petRepository.deleteById(id);
+    }
+
 
 }

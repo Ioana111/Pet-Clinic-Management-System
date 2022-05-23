@@ -20,4 +20,6 @@ public interface PetService {
     List<Pet> findAllVaccinated();
 
     List<PetDto> showAll();
+
+    void deletePetById(Long id);
 }

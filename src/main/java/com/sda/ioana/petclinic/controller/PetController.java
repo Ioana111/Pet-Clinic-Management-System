@@ -82,6 +82,18 @@ public class PetController {
                                 + "\n Owner: " + petDto.getOwner().getFirstName() + " " + petDto.getOwner().getLastName())
                 );
     }
+
+    public void deleteById(){
+        try {
+            System.out.println("Please insert the pet id: ");
+            String idString = scanner.nextLine();
+            Long id = Long.parseLong(idString);
+            petService.deletePetById(id);
+            System.out.println("Pet was successfully deleted!");
+        } catch (NumberFormatException e){
+            System.out.println("Invalid parameter");
+        }
+    }
 }
 
 
