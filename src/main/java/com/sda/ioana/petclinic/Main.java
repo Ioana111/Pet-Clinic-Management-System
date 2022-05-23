@@ -74,6 +74,9 @@ public class Main {
                 case SHOW_ALL_CONSUTS_FOR_SPECIFIC_VET_AND_BETWEEN_INTERVAL:
                     consultController.showAllByVetIdAndDateBetween();
                     break;
+                case SEARCH_VET:
+                    vetController.viewByMultipleParameters();
+                    break;
                 case UNKNOWN:
                     break;
                 case EXIT:

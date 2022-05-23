@@ -7,6 +7,7 @@ import com.sda.ioana.petclinic.service.dto.VetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 import org.hibernate.dialect.lock.OptimisticEntityLockException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -78,7 +79,7 @@ public class VetServiceImpl implements VetService {
         }
         Optional<Vet> vet = vetRepository.findById(id);
 
-        if(vet.isPresent()){
+        if (vet.isPresent()) {
             vet.get().setFirstName(firstName);
             vet.get().setLastName(lastName);
             vet.get().setAddress(address);
@@ -86,6 +87,11 @@ public class VetServiceImpl implements VetService {
 
             vetRepository.update(vet.get());
         }
+    }
+
+    @Override
+    public List<Vet> findByMultipleParameters(String firstName, String lastName, String address, String speciality) throws InvalidParameterException {
+        return vetRepository.findByMultipleParameters(firstName, lastName, address, speciality);
     }
 
 

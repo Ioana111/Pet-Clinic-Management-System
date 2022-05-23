@@ -17,6 +17,7 @@ public enum UserOption {
     ADD_NEW_CONSULT("Add new consult", 11),
     SHOW_ALL_CONSULTS_WITH_UNVACCINATED_PETS("Show all consults with unvaccinated pets", 12),
     SHOW_ALL_CONSUTS_FOR_SPECIFIC_VET_AND_BETWEEN_INTERVAL("Show all consults for specific vet and between interval", 13),
+    SEARCH_VET("Search vet by specific parameter", 14),
     EXIT("Exit", 999),
     UNKNOWN("Unknown option. Try again!", 1000);
 

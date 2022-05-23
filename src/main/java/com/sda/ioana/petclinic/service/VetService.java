@@ -1,5 +1,6 @@
 package com.sda.ioana.petclinic.service;
 
+import com.sda.ioana.petclinic.model.Vet;
 import com.sda.ioana.petclinic.service.dto.VetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
@@ -21,6 +22,8 @@ public interface VetService {
                     String firstName,
                     String lastName,
                     String address,
-                    String speciality) throws InvalidParameterException;;
+                    String speciality) throws InvalidParameterException;
+
+    List<Vet> findByMultipleParameters(String firstName, String lastName, String address, String speciality) throws InvalidParameterException;
 
 }

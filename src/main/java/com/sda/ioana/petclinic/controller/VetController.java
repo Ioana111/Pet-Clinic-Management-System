@@ -54,19 +54,19 @@ public class VetController {
                 );
     }
 
-    public void deleteById(){
+    public void deleteById() {
         try {
             System.out.println("Please insert the vet id: ");
             String idString = scanner.nextLine();
             Long id = Long.parseLong(idString);
             vetService.deleteById(id);
             System.out.println("Vet was successfully deleted!");
-        } catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Invalid parameter");
         }
     }
 
-    public void updateById(){
+    public void updateById() {
         try {
             System.out.println("Please insert id:");
             String idString = scanner.nextLine();
@@ -92,7 +92,24 @@ public class VetController {
         }
     }
 
+    public void viewByMultipleParameters() {
+        try {
+            System.out.println("Please insert first name:");
+            String firstName = scanner.nextLine();
+            System.out.println("Please insert last name:");
+            String lastName = scanner.nextLine();
+            System.out.println("Please insert the address:");
+            String address = scanner.nextLine();
+            System.out.println("Please insert the speciality:");
+            String speciality = scanner.nextLine();
+
+            vetService.findByMultipleParameters(firstName, lastName, address, speciality).stream().forEach(vet -> System.out.println(vet));
+        } catch (InvalidParameterException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception ex) {
+            System.out.println("The veterinarian was not updated, internal server error.");
+        }
 
 
-
+    }
 }
