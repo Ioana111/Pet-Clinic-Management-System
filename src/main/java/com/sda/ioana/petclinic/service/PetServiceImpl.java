@@ -6,11 +6,13 @@ import com.sda.ioana.petclinic.repository.ClientRepository;
 import com.sda.ioana.petclinic.repository.ClientRepositoryImpl;
 import com.sda.ioana.petclinic.repository.PetRepository;
 import com.sda.ioana.petclinic.repository.PetRepositoryImpl;
+import com.sda.ioana.petclinic.service.dto.PetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class PetServiceImpl implements PetService{
 
@@ -57,6 +59,20 @@ public class PetServiceImpl implements PetService{
     @Override
     public List<Pet> findAllVaccinated() {
         return  petRepository.findAllVaccinated();
+    }
+
+    @Override
+    public List<PetDto> showAll() {
+        return petRepository.findAll()
+                .stream()
+                .map(pet ->
+                        new PetDto(
+                                pet.getId(),
+                                pet.getRace(),
+                                pet.getDateOfBirth(),
+                                pet.getVaccinated(),
+                                pet.getOwner())    )
+                .collect(Collectors.toList());
     }
 
 

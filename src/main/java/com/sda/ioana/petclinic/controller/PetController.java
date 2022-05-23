@@ -2,12 +2,14 @@ package com.sda.ioana.petclinic.controller;
 
 import com.sda.ioana.petclinic.service.PetService;
 import com.sda.ioana.petclinic.service.PetServiceImpl;
+import com.sda.ioana.petclinic.service.dto.PetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class PetController {
@@ -65,6 +67,21 @@ public class PetController {
     }
 
 
+    public void showAllPets() {
+        List<PetDto> pets = petService.showAll();
+        if (pets.isEmpty()) {
+            System.out.println("No pet");
+            return;
+        }
+        pets.stream()
+                .forEach(petDto ->
+                        System.out.println("\n ID: " + petDto.getId()
+                                + "\n Race: " + petDto.getRace()
+                                + "\n Date Of birth: " + petDto.getDateOfBirth()
+                                + "\n is vaccinated: " + petDto.getVaccinated()
+                                + "\n Owner: " + petDto.getOwner().getFirstName() + " " + petDto.getOwner().getLastName())
+                );
+    }
 }
 
 

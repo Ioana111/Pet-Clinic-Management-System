@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface PetRepository extends BaseRepository<Pet, Long> {
 
     List<Pet> findAllVaccinated();
-
+    //List<Pet> findAllPets();
 
 }

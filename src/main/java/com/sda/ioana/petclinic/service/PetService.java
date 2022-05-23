@@ -1,6 +1,7 @@
 package com.sda.ioana.petclinic.service;
 
 import com.sda.ioana.petclinic.model.Pet;
+import com.sda.ioana.petclinic.service.dto.PetDto;
 import com.sda.ioana.petclinic.service.exception.InvalidParameterException;
 
 import java.util.Date;
@@ -18,4 +19,5 @@ public interface PetService {
 
     List<Pet> findAllVaccinated();
 
+    List<PetDto> showAll();
 }

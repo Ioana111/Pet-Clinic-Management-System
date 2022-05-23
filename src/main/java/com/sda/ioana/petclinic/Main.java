@@ -54,6 +54,8 @@ public class Main {
                 case SHOW_ALL_PETS_BY_CLINT_ID:
                     clientController.viewAllPetsForClient();
                     break;
+                case SHOW_ALL_PETS:
+                    petController.showAllPets();
                 case UNKNOWN:
                     break;
                 case EXIT:

@@ -38,6 +38,11 @@ public class Client {
         this.email = email;
     }
 
+    public Client(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Long getId() {
         return id;
     }
@@ -96,4 +101,5 @@ public class Client {
                 ", email='" + email + '\'' +
                 '}';
     }
-}
+
+ }
