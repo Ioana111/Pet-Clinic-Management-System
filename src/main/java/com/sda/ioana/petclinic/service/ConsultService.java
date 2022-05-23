@@ -11,5 +11,6 @@ public interface ConsultService {
 
     void create(Date date, String description, Long vetId, Long PetId) throws InvalidParameterException;
     List<Consult> findAllUnvaccinatedPets();
+    List<Consult> findAllByVetIdAndDateBetween(Long vetId, Date startDate, Date endDate) throws InvalidParameterException;
 
 }

@@ -33,10 +33,10 @@ public class ConsultServiceImpl implements ConsultService {
             throw new InvalidParameterException("Description is null or empty.");
         }
 
-        if(vetId == null){
+        if (vetId == null) {
             throw new InvalidParameterException("Vet Id is null");
         }
-        if(petId == null){
+        if (petId == null) {
             throw new InvalidParameterException("Pet Id is null");
         }
 
@@ -62,6 +62,32 @@ public class ConsultServiceImpl implements ConsultService {
         return consultRepository.findAllUnvaccinatedPets();
     }
 
+    @Override
+    public List<Consult> findAllByVetIdAndDateBetween(Long vetId, Date startDate, Date endDate) throws InvalidParameterException {
+        if (vetId == null) {
+            throw new InvalidParameterException("Vet Id is null");
+        }
+        if (startDate == null) {
+            throw new InvalidParameterException("Start date is null.");
+        }
+        if (endDate == null) {
+            throw new InvalidParameterException("End date is null.");
+        }
+        if (vetId == null) {
+            throw new InvalidParameterException("Vet Id is null");
+        }
+
+        //este optional. putem sa nu-l facem deoarece nu ne ajuta neaparat si la search nu facem aceasta validare
+
+//        Optional<Vet> vetFromDB = vetRepository.findById(vetId);
+//        if (vetFromDB.isEmpty()) {
+//            throw new InvalidParameterException("Invalid vet id. Please select an existing vet!");
+//        }
+
+
+        return consultRepository.findAllByVetIdAndDateBetween(vetId, startDate, endDate);
+
+    }
 
 }
 

@@ -56,10 +56,46 @@ public class ConsultController {
     }
 
     public void viewAllUnvaccinatedPets(){
-        System.out.println("Consults that have  unvaccinated pets are: ");
+        System.out.println("Consults that have unvaccinated pets are: ");
        consultService.findAllUnvaccinatedPets()
                .stream()
-               .forEach(consult -> System.out.println("Date: " + consult.getDate() + "\nDescription: " + consult.getDescription() + "\nVet:" + consult.getVet() + "\nPet:" + consult.getPet()));
+               .forEach(consult -> System.out.println("Date: " + consult.getDate() + "\nDescription: " + consult.getDescription() + "\nVet:" + consult.getVet().getId() + "\nPet:" + consult.getPet().getOwner()));
+    }
+
+    public void showAllByVetIdAndDateBetween(){
+        try {
+            System.out.println("Please insert vet id");
+            String vetId1 = scanner.nextLine();
+            Long vetId = Long.parseLong(vetId1);
+
+            System.out.println("Please insert start date: ");
+            String startDate1 = scanner.nextLine();
+            Date startDate = FORMATTER.parse(startDate1);
+
+            System.out.println("Please insert start date: ");
+            String endDate1 = scanner.nextLine();
+            Date endDate = FORMATTER.parse(endDate1);
+
+            System.out.println("The consults for this vet and with date between selected interval are: ");
+            consultService.findAllByVetIdAndDateBetween(vetId, startDate, endDate)
+                    .stream()
+                    .forEach(consult -> System.out.println(("Date: " + consult.getDate() + "\nDescription: " + consult.getDescription() + "\nVet:" + consult.getVet().getId() + "\nPet:" + consult.getPet().getOwner())));
+
+        } catch (InvalidParameterException e){
+            System.out.println(e.getMessage());
+        } catch (ParseException parseException) {
+            System.out.println("Please insert a correct date of birth. Format: DD-MM-YYYY");
+        } catch (Exception ex) {
+            System.out.println("Pet was not created; Internal server error");
+        }
+
+
+
+
+
+
+
+
     }
 
 }
