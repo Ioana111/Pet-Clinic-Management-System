@@ -31,21 +31,6 @@ public class PetRepositoryImpl extends BaseRepositoryImpl<Pet, Long> implements 
 
     }
 
-//    @Override
-//    public List<Pet> findAllPets() {
-//        try {
-//            Session session = SessionManager.getSessionFactory().openSession();
-//            List<Pet> pets = session.createQuery("* FROM Pet p JOIN Client c WHERE p.ownerId = c.ownerId "
-//
-//
-//            session.close();
-//            return pets;
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//            return List.of(); // sau return new ArrayList()
-//        }
-//    }
-
 
 }
 

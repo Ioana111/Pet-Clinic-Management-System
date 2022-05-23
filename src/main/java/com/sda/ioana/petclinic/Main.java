@@ -1,6 +1,7 @@
 package com.sda.ioana.petclinic;
 
 import com.sda.ioana.petclinic.controller.ClientController;
+import com.sda.ioana.petclinic.controller.ConsultController;
 import com.sda.ioana.petclinic.controller.PetController;
 import com.sda.ioana.petclinic.controller.VetController;
 import com.sda.ioana.petclinic.option.UserOption;
@@ -17,6 +18,7 @@ public class Main {
 //        vetController.create();
         PetController petController = new PetController();
         ClientController clientController = new ClientController();
+        ConsultController consultController = new ConsultController();
 
         UserOption option = UserOption.UNKNOWN;
         Scanner scanner = new Scanner(System.in);
@@ -56,10 +58,16 @@ public class Main {
                     break;
                 case SHOW_ALL_PETS:
                     petController.showAllPets();
+                    break;
                 case DELETE_PET_BY_ID:
                     petController.deleteById();
+                    break;
                 case UPDATE_PET_BY_ID:
                     petController.updateById();
+                    break;
+                case ADD_NEW_CONSULT:
+                    consultController.create();
+                    break;
                 case UNKNOWN:
                     break;
                 case EXIT:

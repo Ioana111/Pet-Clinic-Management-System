@@ -15,7 +15,7 @@ Done:PCMS-6 As a User should be able to see all the pets.I should be able to see
 
 Done:PCMS-7 As a User, I should be able to delete an existing pet by id.
 
-TODO: PCMS-8 As a User I should be able to update an existing pet by id. I should be able to update:race, birthdate, is vaccinated, and owner name.
+Partially done TODO: PCMS-8 As a User I should be able to update an existing pet by id. I should be able to update:race, birthdate, is vaccinated, and owner name.
 
 PCMS-9 As a User, I should be able to add a new consult. I should be able
 to specify vet, pet, date, description
