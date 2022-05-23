@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PetRepositoryImpl extends BaseRepositoryImpl<Pet, Long> implements  PetRepository{
+public class PetRepositoryImpl extends BaseRepositoryImpl<Pet, Long> implements PetRepository {
 
     public PetRepositoryImpl() {
         super(Pet.class);
@@ -18,16 +18,21 @@ public class PetRepositoryImpl extends BaseRepositoryImpl<Pet, Long> implements 
 
     @Override
     public List<Pet> findAllVaccinated() {
-        try{
+        try {
             Session session = SessionManager.getSessionFactory().openSession();
             List<Pet> pets = session.createQuery("FROM Pet p WHERE p.isVaccinated = 1").list();
 
             session.close();
             return pets;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return new ArrayList<>();
         }
 
     }
+
+
 }
+
+
+

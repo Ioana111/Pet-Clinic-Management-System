@@ -17,4 +17,5 @@ public interface PetService {
     ) throws InvalidParameterException;
 
     List<Pet> findAllVaccinated();
+
 }

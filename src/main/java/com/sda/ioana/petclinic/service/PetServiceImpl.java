@@ -58,4 +58,6 @@ public class PetServiceImpl implements PetService{
     public List<Pet> findAllVaccinated() {
         return  petRepository.findAllVaccinated();
     }
+
+
 }

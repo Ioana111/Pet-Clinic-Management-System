@@ -1,6 +1,7 @@
 package com.sda.ioana.petclinic.repository;
 
 import com.sda.ioana.petclinic.model.Client;
+import com.sda.ioana.petclinic.model.Pet;
 import com.sda.ioana.petclinic.repository.base.BaseRepositoryImpl;
 import com.sda.ioana.petclinic.utils.SessionManager;
 import org.hibernate.Session;
@@ -37,5 +38,28 @@ public class ClientRepositoryImpl extends BaseRepositoryImpl<Client, Long> imple
         }
 
     }
+
+    @Override
+    public Optional<Client> findPetsByClientId(Long clientId) {
+        try{
+            Session session = SessionManager.getSessionFactory().openSession();
+            Client client = session.find(Client.class, clientId);
+            System.out.println(client.getPets().size());
+
+
+            session.close();
+            return Optional.of(client);
+        }catch (Exception e) {
+            e.printStackTrace();
+            return Optional.empty();
+        }
+
+
+
+
+
+
+    }
+
 
 }

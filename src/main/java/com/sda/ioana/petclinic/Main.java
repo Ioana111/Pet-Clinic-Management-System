@@ -1,5 +1,6 @@
 package com.sda.ioana.petclinic;
 
+import com.sda.ioana.petclinic.controller.ClientController;
 import com.sda.ioana.petclinic.controller.PetController;
 import com.sda.ioana.petclinic.controller.VetController;
 import com.sda.ioana.petclinic.option.UserOption;
@@ -15,6 +16,7 @@ public class Main {
         VetController vetController = new VetController();
 //        vetController.create();
         PetController petController = new PetController();
+        ClientController clientController = new ClientController();
 
         UserOption option = UserOption.UNKNOWN;
         Scanner scanner = new Scanner(System.in);
@@ -48,6 +50,9 @@ public class Main {
                     break;
                 case SHOW_ALL_VACCINATED_PETS:
                     petController.showAllVaccinated();
+                    break;
+                case SHOW_ALL_PETS_BY_CLINT_ID:
+                    clientController.viewAllPetsForClient();
                     break;
                 case UNKNOWN:
                     break;

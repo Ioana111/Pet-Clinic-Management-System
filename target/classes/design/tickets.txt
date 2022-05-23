@@ -1,41 +1,42 @@
-PCMS-1
-As a user of the system I should be able to add a new veterinarian. I should be able to specify: firstname, lastname, address, speciality.
+Done: PCMS-1 As a User of the system, I should be able to add a new veterinarian.
+I should be able to specify: first name, last name, address, speciality.
 
-PCMS-2
-As a user, I should be able to view all the vets. I should be able to see for each vet: id, firstname, lastname, adress, speciality.
+Done: PCMS-2 As a User should be able to see all the vets.I should be able to see for each vet
+first name, last name, address, speciality.
 
-PCMS-3
-As a user, I should be able to delete an existing vet by id.
+Done: PCMS-3 As a User, I should be able to delete and existing vet by id.
 
-PCMS-4
-As a user, I should be able to update an existing vet by id. I should be able to update: firstname, lastname, adress, speciality.
+Done: PCMS-4 As a User, I should be able to update an existing vet by id. I should be able to update first name, last name, address, speciality.
 
-PCMS-5
-As a user, I should be able to add a new pet. I should be able to specify: race, birthdate, isVaccinated, ownerName - OWNER FIRST NAME and OWNER LAST NAME
+Done: PCMS-5 As a User, I should be able to add a new pet. I should be able to specify: race, birthdate, is vaccinated
+and owner first and last name.
 
-/HW TODO
-PCMS-6
-As a user, I should be able to view all the pets. I should be able to see for each pet: id, race, birthdate, isVaccinated, ownerName.
+TODO:PCMS-6 As a User should be able to see all the pets.I should be able to see for each pet: race, birthdate, is vaccinated and owner name.
 
-/HW TODO
-PCMS-7
-As a user, I should be able to delete an existing pet by id.
+TODO:PCMS-7 As a User, I should be able to delete an existing pet by id.
 
-/HW TODO
-PCMS-8
-As a user, I should be able to update an existing pet by id. I should be able to update: race, birthdate, isVaccinated, ownerName.
+TODO: PCMS-8 As a User I should be able to update an existing pet by id. I should be able to update:race, birthdate, is vaccinated, and owner name.
 
-PCMS-9
-As a user, I should be able to add a new consult. I should be able to specify: veterinarian_id, pet_id, date, description.
 
-PCMS-10
-As a user, I should be able to view all the consults. I should be able to see for each consult: id, veterinarian_id, pet_id, date, description.
+PCMS-9 As a User, I should be able to add a new consult. I should be able
+to specify vet, pet, date, description
 
-PCMS-11
-As a user, I should be able to update the description of a consult.
+TODO: PCMS-10 As a User, I should be able to view all the consults. I should be able to see each consult: id, vet_id, pet_id, date, description.
 
-PCMS-12
-Define hibernate database mode.
+TODO: PCMS-11 As a User, I should be able to update the description of a consult.
 
-PCMS-13
-Create base repository classes.
+Done: PCMS-12 Define Hibernate Database Model
+
+Done: PCMS-13 Create Base Repository classes
+
+Done: PCMS-14 As a User, I should be able to view all the vaccinated pets.
+
+PCMS-15 As a User, I should be able to view all the pets for a client id.
+
+PCMS-16 As a User, I should be able to view all the consults with unvaccinated pets.
+
+PCMS-17 As a User, I should be able to view all the clients with more than one pet.
+
+PCMS-18 As a User, I should be able to view all the consults made by vet in a specific period. I should be able to provide the vet id, start period inclusive and period exclusive.
+
+PCMS-19 As a User, I should be able to filter vets by multiple parameters with the mention that every parameter is optional.
